@@ -2,6 +2,8 @@
 
 Tour The Valley is a dynamic web application designed to keep the community informed about local events, news, and weather. This project leverages AWS services for backend functionalities, including AWS Lambda for serverless computing and AWS database services for event data storage and retrieval.
 
+This project was completed in 24 hours for the 2023 Leh-Laf Hackathon
+
 ## Live Website
 
 Visit [Tour The Valley](http://tourthevalley.s3-website-us-east-1.amazonaws.com/) to see the application in action.
