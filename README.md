@@ -2,6 +2,10 @@
 
 Tour The Valley is a dynamic web application designed to keep the community informed about local events, news, and weather. This project leverages AWS services for backend functionalities, including AWS Lambda for serverless computing and AWS database services for event data storage and retrieval.
 
+## Live Website
+
+Visit [Tour The Valley](http://tourthevalley.s3-website-us-east-1.amazonaws.com/) to see the application in action.
+
 ## Project Structure
 
 The website comprises the following main files and directories:
@@ -12,7 +16,7 @@ The website comprises the following main files and directories:
 
 ### Key Features
 
-- Community Events: Displays upcoming events and allows users to add new events.
+- Community Events: Displays upcoming events and allows users to add new events. Top events is the top 6 events sorted by number of people attending.
 - Community News: Shows the latest news articles relevant to the community.
 - Local Weather: Provides current weather information for the area.
 
