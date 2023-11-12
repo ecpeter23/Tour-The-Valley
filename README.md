@@ -23,6 +23,7 @@ The application uses AWS Lambda functions to interact with the AWS database wher
 ### Lambda Functions
 
 - `fetchEvents` - Retrieves event data from the AWS database.
+- 'rsvpToEvent' - Iterates the peopleAttending an event by one
 - `addEvent` - Allows users to add new events to the database.
 
 ### Database
