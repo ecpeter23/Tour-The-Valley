@@ -36,3 +36,6 @@ The application uses AWS Lambda functions to interact with the AWS database wher
 
    ```bash
    git clone https://github.com/ecpeter23/Tour-The-Valley.git
+
+2. **Running the Website**
+Open index.html in a web browser to view and interact with the website.
