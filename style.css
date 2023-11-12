@@ -1,0 +1,383 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+header {
+    background-color: #333;
+    color: #333;
+    padding: 1rem 0;
+    text-align: center;
+    transition: 0.2s;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav#tabContainer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #1a1a1a;
+    /* Modern dark background */
+}
+
+nav#tabContainer button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+nav#tabContainer button:hover {
+    background-color: #555;
+}
+
+.tabContent {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    /* Ensures the image doesn't exceed its container */
+    height: auto;
+    filter: brightness(1.5) contrast(1.5) saturate(1.5) sepia(100%);
+
+}
+
+
+
+
+/* News functions*/
+
+.scroll-view-container {
+    display: flex;
+    flex-direction: column;
+    /* Change to column for vertical scrolling */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    max-height: 200px;
+    /* Set a maximum height to limit the container size */
+}
+
+#newsContainer {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.news-card {
+    width: 220px;
+    border: 1px solid #ddd;
+    /* Border around each event */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 0px;
+    /* Padding inside the card */
+    margin-bottom: 15px;
+    /* Space between cards */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    background-color: #fff;
+    /* White background for the card */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.news-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Larger shadow on hover */
+    transform: translateY(-3px);
+    /* Slight lift effect on hover */
+}
+
+.news-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f1eeee;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.news-header h3 {
+    margin-top: 10px;
+    color: #333;
+    font-size: 1.2em;
+    /* Slightly larger font for the title */
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 10px;
+}
+
+.news-image {
+    height: 150px;
+    /* Fixed height for the image */
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 8px;
+    /* Align with card border-radius */
+    border-top-right-radius: 8px;
+}
+
+/* Event functions */
+.top-events-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    /* Adjust as needed */
+}
+
+.event-card {
+    width: 220px;
+    border: 1px solid #ddd;
+    /* Border around each event */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 0px;
+    /* Padding inside the card */
+    margin-bottom: 15px;
+    /* Space between cards */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    background-color: #fff;
+    /* White background for the card */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.event-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Larger shadow on hover */
+    transform: translateY(-3px);
+    /* Slight lift effect on hover */
+}
+
+.event-header h3 {
+    margin-top: 10px;
+    color: #333;
+    font-size: 1.2em;
+    /* Slightly larger font for the title */
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 10px;
+}
+
+
+.event-location {
+    color: #606060;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 10px;
+}
+
+.event-description {
+    font-size: 0.9em;
+    /* Adjust font size for description */
+    color: #666;
+    /* Slightly muted color for text */
+    padding: 10px;
+}
+
+.event-dateRange {
+    vertical-align: text-bottom;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.event {
+    /* existing styles */
+    /* for grid view */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.event p {
+    margin: 0px 0;
+}
+
+.event-image {
+    height: 150px;
+    /* Fixed height for the image */
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 8px;
+    /* Align with card border-radius */
+    border-top-right-radius: 8px;
+}
+
+#addEventButton {
+    margin-left: auto;
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    /* Adjust the positioning as needed */
+}
+
+#addEventButton:hover {
+    background-color: #555;
+}
+
+#viewMoreButton {
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#viewMoreButton:hover {
+    background-color: #555;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#addEventForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#addEventForm input,
+#addEventForm textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+#addEventForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+#addEventForm button:hover {
+    opacity: 0.8;
+}
+
+
+
+
+/* News section  */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#news-container {
+    display: flex;
+    overflow-x: scroll;
+    padding: 20px;
+    height: 200px;
+}
+
+.news-card {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    min-width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.news-card-content {
+    padding: 30px;
+}

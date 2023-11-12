@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour The Valley</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <img src=DLV_Blue_Horizontal_08f52fac-96fd-4e6e-ae22-484200e7e48d.png>
+</header>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const header = document.getElementById("mainHeader");
+        const headerImage = header.querySelector("img");
+
+        window.addEventListener("scroll", function () {
+            const scrollPos = window.scrollY;
+
+            // Adjust the header padding and image size based on scroll position
+            header.style.padding = scrollPos > 50 ? "10px" : "20px";
+            header.style.background = scrollPos > 50 ? "#555" : "#333";
+            headerImage.style.maxWidth = scrollPos > 50 ? "80%" : "100%";
+        });
+    });
+</script>
+<nav id="tabContainer">
+    <button onclick="openTab('events')">Community Events</button>
+    <button onclick="openTab('news')">Community News</button>
+    <button onclick="openTab('weather')">Local Weather</button>
+</nav>
+
+
+<main>
+    <section id="events" class="tabContent">
+        <div class="top-events-container">
+            <h2>Top Events</h2>
+            <button id="addEventButton" onclick="addEvent()">Add Event</button>
+        </div>
+        <div id="topEventsContainer" class="events-grid">
+            <!-- Dynamic content for top events will be loaded here -->
+        </div>
+        <h2>All Events</h2>
+        <div>
+            <label for="eventTypeFilter">Event Type:</label>
+            <label for="dateFilter">Date:</label>
+            <input type="date" id="dateFilter">
+            <button id="filterButton" onclick="filterEvents()">Filter</button>
+        </div>
+        <div id="allEventsContainer" class="events-grid">
+            <!-- Dynamic content for all events will be loaded here -->
+        </div>
+        <button id="viewMoreButton">View More</button>
+        <!-- Modal for event details and RSVP -->
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modalDetails"></div>
+                <button id="rsvpButton">I'm Going</button>
+            </div>
+        </div>
+        <div id="addEventModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeAddEventModal()">&times;</span>
+                <h2>Add New Event</h2>
+                <form id="addEventForm">
+                    <input type="text" id="eventName" placeholder="Event Name" required><br>
+                    <input type="text" id="eventAddress" placeholder="Address" required><br>
+                    <input type="datetime-local" id="startDate" placeholder="Start Date" required><br>
+                    <input type="datetime-local" id="endDate" placeholder="End Date" required><br>
+                    <textarea id="eventDescription" placeholder="Description" required></textarea><br>
+                    <input type="text" id="eventImageURL" placeholder="Image URL (Optional)"><br>
+                    <button type="submit">Add Event</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="tabContent" style="display:none">
+        <h2>News in The Valley</h2>
+        <div id="newsContainer" class="events-grid">
+            <!-- Dynamic content for news will be loaded here -->
+        </div>
+    </section>
+
+    <section id="weather" class="tabContent" style="display:none">
+        <style>
+            #map {
+                height: 500px;
+                width: 600px;
+            }
+
+            .centered-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+        </style>
+
+        <div class="centered-container">
+            <h2>Weather in the Valley</h2>
+            <div id="map"></div>
+        </div>
+
+        <link rel="stylesheet" href="https://cdn.aerisapi.com/wxblox/latest/aeris-wxblox.css">
+        <script defer src="https://cdn.aerisapi.com/sdk/js/latest/aerisweather.min.js"></script>
+
+        <script>
+            window.onload = () => {
+                const aeris = new AerisWeather('5llQQzLvu5LAmUXGiBKff', 'rkmSVyu2E64j4uOa4KMHQaXEief1YU4eUcy8O6cB');
+                aeris.views().then(views => {
+                    const map = new views.InteractiveMap(document.getElementById('map'), {
+                        center: {
+                            lat: 40.58058466412761,
+                            lon: -75.4541015625
+                        },
+                        zoom: 5,
+                        layers: 'flat,fradar,admin'
+                    });
+                });
+            };
+        </script>
+    </section>
+</main>
+
+<footer>
+    <p>© 2023 Tour The Valley</p>
+</footer>
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
