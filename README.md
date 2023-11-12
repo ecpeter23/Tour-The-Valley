@@ -34,4 +34,4 @@ The application uses AWS Lambda functions to interact with the AWS database wher
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/ecpeter23/Tour-The-Valley.git)https://github.com/ecpeter23/Tour-The-Valley.git
+   git clone https://github.com/ecpeter23/Tour-The-Valley.git
